@@ -348,7 +348,7 @@ W0708 17:16:27.308156 11473 heartbeat\_server.cpp:82\] backend ip saved in maste
 此时需要，先用以下命令drop掉原来加进去的be，然后重新以正确的IP添加BE。
 
 ```sql
-mysql> ALTER SYSTEM DROPP BACKEND "172.16.139.24:9050";
+mysql> ALTER SYSTEM DROP BACKEND "172.16.139.24:9050";
 ```
 
 <br/>
@@ -391,6 +391,17 @@ LastUpdateTime: 2020-04-01 19:08:45
 ```
 
 Alive为true代表状态正常。
+
+
+<br/>
+
+此时删除broker或是端口冲突的话，先用以下命令drop掉原来加进去的broker，然后重新添加broker。
+
+```sql
+mysql> ALTER SYSTEM DROP BROKER broker1 "172.16.139.24:broker_ipc_port";
+```
+
+<br/>
 
 ## 参数设置
 
